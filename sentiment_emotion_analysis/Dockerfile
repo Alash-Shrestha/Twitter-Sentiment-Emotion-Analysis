@@ -4,7 +4,9 @@ EXPOSE 8000
 
 WORKDIR /app 
 
-RUN pip install Django textblob numpy tweepy pandas
+COPY requirements.txt /app/
+
+RUN pip install -r requirements.txt
 
 COPY . /app/
 
